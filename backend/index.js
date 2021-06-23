@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const NBA = require('nba');
+const axios = require('axios');
 
 const app = express();
 app.use(express.urlencoded({extended:false}));
@@ -10,19 +11,24 @@ const PORT = 5000;  //backend routing port #
 app.listen(PORT, () => {
     console.log('Server is running on port ' + PORT);
 });
-const curry = NBA.findPlayer('Stephen Curry');
-console.log(curry);
-//NBA.stats.playerInfo({ PlayerID: curry.playerId }).then(console.log);
 
-let _lakersID = 1610612747;
 
-NBA.stats.boxScoreSummary({GameID: '0021401082'}).then(function(data){
-    JSON.stringify(data);
+NBA.stats.boxScore({GameID: '0041900141'}).then(function(data){
     console.log(data);
 });
-
-
-//NBA.stats.leagueGameLog({PlayerOrTeam: "LAL"}).then(console.log);
+var TeamGameIDs = [];
+NBA.stats.leagueGameLog({PlayerOrTeam: 'T', Season: "2019-20", SeasonType: "Playoffs"}).then(function(data){
+    for (var i = 0; i < data.resultSets[0].rowSet.length; i++){
+        if (data.resultSets[0].rowSet[i][2] === "LAL"){
+            if (data.resultSets[0].rowSet[i][6].includes("DEN")){
+            //console.log(data.resultSets[0].rowSet[i][4]);       // game ID
+            TeamGameIDs.push(data.resultSets[0].rowSet[i][4]);
+            console.log(data.resultSets[0].rowSet[i][6], data.resultSets[0].rowSet[i][7]);       // matchup
+            }
+    }
+}
+console.log(TeamGameIDs);
+});
 
 
 
