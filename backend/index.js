@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 
-NBA.stats.boxScore({GameID: '0041900141'}).then(function(data){
+NBA.stats.boxScoreSummary({GameID: '0041900141'}).then(function(data){
     console.log(data);
 });
 var TeamGameIDs = [];
@@ -31,6 +31,10 @@ console.log(TeamGameIDs);
 });
 
 
+
+app.get('/getGameData', (req, res) => {
+    res.send(TeamGameIDs)
+});
 
 
 
