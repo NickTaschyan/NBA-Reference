@@ -17,10 +17,10 @@ NBA.stats.boxScoreSummary({GameID: '0041900141'}).then(function(data){
     console.log(data);
 });
 var TeamGameIDs = [];
-NBA.stats.leagueGameLog({PlayerOrTeam: 'T', Season: "2019-20", SeasonType: "Playoffs"}).then(function(data){
+NBA.stats.leagueGameLog({PlayerOrTeam: 'T', Season: "1999-00", SeasonType: "Regular Season"}).then(function(data){
     for (var i = 0; i < data.resultSets[0].rowSet.length; i++){
         if (data.resultSets[0].rowSet[i][2] === "LAL"){
-            if (data.resultSets[0].rowSet[i][6].includes("DEN")){
+            if (data.resultSets[0].rowSet[i][6].includes("BOS")){
             //console.log(data.resultSets[0].rowSet[i][4]);       // game ID
             TeamGameIDs.push(data.resultSets[0].rowSet[i][4]);
             console.log(data.resultSets[0].rowSet[i][6], data.resultSets[0].rowSet[i][7]);       // matchup

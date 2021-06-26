@@ -32,14 +32,16 @@ h2{
     display: flex;
     background-color: black;
 }
-
+.settings{
+    
+}
 
 .img-grid-1 {
     border-style: solid;
     border-color: white;
     border-width: 4px;
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 10px;
+    margin-right: 0px;
     padding: 9px;
     display: grid;
     grid-template-columns: 110px 110px 110px 110px 110px 110px;
@@ -58,7 +60,7 @@ h2{
 .img-grid-2 {
     border-style: solid;
     border-color: white;
-    margin-left: 120px;
+    margin-left: 0px;
     margin-right: 120px;
     padding: 9px;
     display: grid;
@@ -73,3 +75,15 @@ h2{
     width: 110px;
     height: 110px;
 }
+
+#lakers1{
+    border-color: rgb(46, 197, 46); 
+    border-width: 6px;
+
+}
+
+#celtics2{
+    border-color: magenta;
+    border-width: 6px;
+}
+
