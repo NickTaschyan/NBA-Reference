@@ -3,15 +3,6 @@ import Header from "./component/Header";
 import ImageGrid from "./component/ImageGrid";
 import SelectionInfo from "./component/SelectionInfo";
 import FinalResults from "./component/ResultLoader";
-// export default class App extends Component {
-//   state = {
-      
-//   };
-//   componentDidMount = () => {
-//     axios.get('getGameData').then(response => {
-//       console.log(response.data);
-//     });
-//   }
 
 function App() {
   const[selectedImg, setSelectedImg] = useState("LAL");
@@ -31,9 +22,9 @@ function App() {
         />
         <SelectionInfo selectedImg={selectedImg} selectedImg2={selectedImg2} 
         selectedImgID={selectedImgID} selectedImgID2={selectedImgID2}
-        selectedSeason = {selectedSeason} selectedSeasonStatus = {selectedSeasonStatus}
         />
-        <FinalResults />
+        <FinalResults selectedImg={selectedImg} selectedImg2={selectedImg2} 
+        selectedSeason = {selectedSeason} selectedSeasonStatus = {selectedSeasonStatus} />
 
     </div>
      );

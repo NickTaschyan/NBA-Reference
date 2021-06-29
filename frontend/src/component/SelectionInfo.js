@@ -3,7 +3,7 @@ var IDList1 = ["hawks1", "celtics1", "nets1", "hornets1", "bulls1", "cavs1", "ma
 var IDList2 = ["hawks2", "celtics2", "nets2", "hornets2", "bulls2", "cavs2", "mavs2", "nuggets2", "pistons2", "warriors2", "rockets2", "pacers2", "clippers2", "lakers2", "grizzlies2", "heat2", "bucks2", "wolves2", "pelicans2", "knicks2", "thunder2", "magic2", "sixers2", "suns2", "blazers2", "kings2", "spurs2", "raptors2", "jazz2", "wizards2"];
 
 
-const SelectionInfo = ({selectedImg, selectedImg2, selectedImgID, selectedImgID2, selectedSeason, selectedSeasonStatus}) => {
+const SelectionInfo = ({selectedImg, selectedImg2, selectedImgID, selectedImgID2}) => {
     if (selectedImgID != null){
     checkSelected();
     }
