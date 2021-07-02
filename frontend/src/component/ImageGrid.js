@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 const option = [
     {label: "2020-21", value: "2020-21"},
     {label: "2019-20", value: "2019-20"},
@@ -124,18 +125,18 @@ const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelect
                     <img src = "/img/washington_wizards.png" id = "wizards1" alt = "wizards" onClick={() => (setSelectedImg("WAS") & setSelectedImgID("wizards1"))}/>
                  </div>
                  <div className = "settings">
-                    <h4>Select your Season!</h4>
-                        <select value = {G.season} onChange = {G.handleChange}>
+                    <Form.Label column = "lg">Season</Form.Label>
+                        <Form.Control as="select" size="lg" value = {G.season} onChange = {G.handleChange}>
                             {option.map((option) => (
-                               <option value = {option.value}>{option.label}</option> 
+                               <option key = {option.value}>{option.label}</option> 
                             ))}
-                        </select>
-                    <h4>Regular Season or Playoffs?</h4>   
-                    <select value = {G.seasonStatus} onChange = {G.handleStatus}>
+                        </Form.Control>
+                    <Form.Label column = "lg">Season Type</Form.Label>   
+                    <Form.Control as="select" size="lg" value = {G.seasonStatus} onChange = {G.handleStatus}>
                             {seasonOption.map((seasonOption) => (
-                               <option value = {seasonOption.value}>{seasonOption.label}</option> 
+                               <option key = {seasonOption.value}>{seasonOption.label}</option> 
                             ))}
-                        </select> 
+                        </Form.Control> 
                  </div>
                  <div className = 'img-grid-2'>
                  <img src = "/img/atlanta_hawks.png" id = "hawks2" alt = "hawks" onClick={() => (setSelectedImg2("ATL") & setSelectedImgID2("hawks2"))}/>

@@ -8,7 +8,7 @@ const SelectionInfo = ({selectedImg, selectedImg2, selectedImgID, selectedImgID2
     checkSelected();
     }
     return (
-        <div>
+        <div className = "maindiv">
             <p>{selectedImg} {selectedImg2}</p>
         </div> 
     )
