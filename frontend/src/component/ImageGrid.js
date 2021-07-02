@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
-const option = [
+const option = [           // List of options for our seasons dropdown menu
     {label: "2020-21", value: "2020-21"},
     {label: "2019-20", value: "2019-20"},
     {label: "2018-19", value: "2018-19"},
@@ -63,21 +63,21 @@ const option = [
     {label: "1961-62", value: "1961-62"},
    {label: "1960-61", value: "1960-61"},
 ]
-const seasonOption = [
+const seasonOption = [      // List of options for our seasonType dropdown menu
     {label: "Regular Season", value: "Regular Season"},
     {label: "Playoffs", value: "Playoffs"},
 ]
 
-const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelectedImgID2, setSelectedSeason, setSeasonStatus}) => { 
+const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelectedImgID2, setSelectedSeason, setSeasonStatus}) => { // everytime ImageGrid is called our results are shared across our components
     class ImgApp extends React.Component {
         constructor() {
           super();
           this.state = {
-            season: "2020-21",
-            seasonStatus: "Regular Season",
+            season: "2020-21",      // default values
+            seasonStatus: "Regular Season",     
           };
       
-          this.handleChange = this.handleChange.bind(this);
+          this.handleChange = this.handleChange.bind(this);     // calls to functions to initiate values 
           this.handleStatus = this.handleStatus.bind(this);
         }
       
@@ -88,11 +88,11 @@ const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelect
             setSeasonStatus(e.target.value);
           }
     };      
-    var G = new ImgApp();
+    var PickedImg = new ImgApp();
     return (
         <div>
             <div className = "team-container">
-                <div className = "img-grid-1">
+                <div className = "img-grid-1">  {/*in these image grids we call our set selected functions to later pass as parameters and highlight image containers */}
                     <img src = "/img/atlanta_hawks.png" id = "hawks1" alt = "hawks" onClick={() => (setSelectedImg("ATL") & setSelectedImgID("hawks1"))}/>
                     <img src = "/img/boston_celtics.png" id = "celtics1" alt = "celtics" onClick={() => (setSelectedImg("BOS") & setSelectedImgID("celtics1"))} />
                     <img src = "/img/brooklyn_nets.png" id = "nets1" alt = "nets" onClick={() => (setSelectedImg("BKN") & setSelectedImgID("nets1"))} />
@@ -126,19 +126,22 @@ const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelect
                  </div>
                  <div className = "settings">
                     <Form.Label column = "lg">Season</Form.Label>
-                        <Form.Control as="select" size="lg" value = {G.season} onChange = {G.handleChange}>
-                            {option.map((option) => (
+                        <Form.Control  as="select" size="lg" value = {PickedImg.season} onChange = {PickedImg.handleChange}> 
+                            {option.map((option) => ( // Form is a bootstrap component for styling, our values from the above declared options array of seasons 
                                <option key = {option.value}>{option.label}</option> 
                             ))}
                         </Form.Control>
+                        <div className = "block-seperator">
+                            <img src = "/img/vs.jpeg" id = "vsimg" alt = "vs"/>
+                        </div>
                     <Form.Label column = "lg">Season Type</Form.Label>   
-                    <Form.Control as="select" size="lg" value = {G.seasonStatus} onChange = {G.handleStatus}>
-                            {seasonOption.map((seasonOption) => (
+                    <Form.Control as="select" size="lg" value = {PickedImg.seasonStatus} onChange = {PickedImg.handleStatus}>
+                            {seasonOption.map((seasonOption) => (// Form is a bootstrap component for styling, our values and changes are handled based off list we declared earlier
                                <option key = {seasonOption.value}>{seasonOption.label}</option> 
                             ))}
                         </Form.Control> 
                  </div>
-                 <div className = 'img-grid-2'>
+                 <div className = 'img-grid-2'>  {/*in these image grids we call our set selected functions to later pass as parameters and highlight image containers */}
                  <img src = "/img/atlanta_hawks.png" id = "hawks2" alt = "hawks" onClick={() => (setSelectedImg2("ATL") & setSelectedImgID2("hawks2"))}/>
                     <img src = "/img/boston_celtics.png" id = "celtics2" alt = "celtics" onClick={() => (setSelectedImg2("BOS") & setSelectedImgID2("celtics2"))} />
                     <img src = "/img/brooklyn_nets.png" id = "nets2" alt = "nets" onClick={() => (setSelectedImg2("BKN") & setSelectedImgID2("nets2"))} />

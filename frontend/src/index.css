@@ -8,6 +8,9 @@ div{
 
 header{
     background-image: url("headers/NBA_header.png");
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
     margin: auto;
     width: 1251px;
     height: 367px;
@@ -23,13 +26,20 @@ h2{
 }
 .App {
     margin: 0 auto;
-    background: linear-gradient(-85deg, #fa0418 50%, rgba(0, 0, 0, 0) 30%), #0729ee;
+    background: black;
 }
 
-.dynamicTable{
-    margin-left: 150px;
-    margin-right: 150px;
+.maintable{
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 10px;
 
+
+}
+.dynamicTable{
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(100, 100, 100, 0.61);
 }
 
 /* image grid styling */ 
@@ -37,16 +47,14 @@ h2{
     display: flex;
     background-color: black;
 }
-.settings{
-    
-}
+
 
 .img-grid-1 {
     border-style: solid;
     border-color: white;
     border-width: 4px;
     margin-left: 10px;
-    margin-right: 0px;
+    margin-right: 3px;
     padding: 9px;
     display: grid;
     grid-template-columns: 110px 110px 110px 110px 110px 110px;
@@ -65,7 +73,7 @@ h2{
 .img-grid-2 {
     border-style: solid;
     border-color: white;
-    margin-left: 0px;
+    margin-left: 3px;
     margin-right: 120px;
     padding: 9px;
     display: grid;
@@ -91,5 +99,78 @@ h2{
     border-color: magenta;
     border-width: 6px;
 }
+#vsimg{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width:300px;
+    height: 250px;
+    background-color:black;
+}
+
+.block-seperator{
+    margin-right: 45px;
+    margin-left: 45px;
+
+}
+
+.settings{
+    text-align-last: center;
+}
+
+.maindiv{
+   display: flex;
+   padding: 20px;
+   background-color: black;
+}
+
+.teamchoice{
+    font-size: 40px;
+    flex: 1;
+}
+thead{
+    position: sticky;
+    top: 0; 
+}
 
 
+.resultContainer{
+    display: flex;
+    padding: 20px;
+    background-color: black;
+
+ }
+ 
+ .resultChild{
+     font-size: 32px;
+     flex: 1;
+ }
+
+#dateCont.resultChild{
+    color: white;
+    margin-left: -20px;
+    text-align: left;
+    font-size: 32px;
+    flex: 1;
+}
+#matchupCont.resultChild{
+    color: white;
+    font-size: 32px;
+    flex: 1;
+}
+#winCont.resultChild{
+    color: rgb(9, 255, 9);
+    text-align: right;
+    font-size: 32px;
+    flex: 1;
+}
+#lossCont.resultChild{
+    color: red;
+    text-align: right;
+    font-size: 32px;
+    flex: 1;
+}
+.Error{
+    font-size: 32px;
+    color: red;
+    margin-bottom: 40px;
+}

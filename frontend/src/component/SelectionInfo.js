@@ -7,16 +7,24 @@ const SelectionInfo = ({selectedImg, selectedImg2, selectedImgID, selectedImgID2
     if (selectedImgID != null){
     checkSelected();
     }
-    return (
+    return (        // shows selected teams block below the team images 
         <div className = "maindiv">
-            <p>{selectedImg} {selectedImg2}</p>
+           <div className = "teamchoice">
+                {selectedImg}
+           </div>
+           <div className = "teamchoice">
+
+           </div>
+           <div className = "teamchoice">
+                 {selectedImg2}
+           </div>
         </div> 
     )
     
     
     function checkSelected(){
         try {
-            for (var i = 0; i < IDList1.length; i++){
+            for (var i = 0; i < IDList1.length; i++){       // sets selected images borders to become highlighted, then also resets the rest to default colors 
                 if (IDList1[i] === selectedImgID){
                     document.getElementById(selectedImgID).style.cssText = 'border-width: 6px; border-color:rgb(46, 197, 46);';
              }
@@ -33,7 +41,7 @@ const SelectionInfo = ({selectedImg, selectedImg2, selectedImgID, selectedImgID2
          }
     }
         } catch (error) {
-            console.log("Early execution, null values");
+            console.log("Early execution, null values");       
         }
 
 
