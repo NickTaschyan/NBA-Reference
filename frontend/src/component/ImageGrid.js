@@ -93,7 +93,7 @@ const ImageGrid = ({setSelectedImg, setSelectedImg2, setSelectedImgID, setSelect
         <div>
             <div className = "team-container">
                 <div className = "img-grid-1">  {/*in these image grids we call our set selected functions to later pass as parameters and highlight image containers */}
-                    <img src = "/img/atlanta_hawks.png" id = "hawks1" alt = "hawks" onClick={() => (setSelectedImg("ATL") & setSelectedImgID("hawks1"))}/>
+                    <img src = "/public/img/atlanta_hawks.png" id = "hawks1" alt = "hawks" onClick={() => (setSelectedImg("ATL") & setSelectedImgID("hawks1"))}/>
                     <img src = "/img/boston_celtics.png" id = "celtics1" alt = "celtics" onClick={() => (setSelectedImg("BOS") & setSelectedImgID("celtics1"))} />
                     <img src = "/img/brooklyn_nets.png" id = "nets1" alt = "nets" onClick={() => (setSelectedImg("BKN") & setSelectedImgID("nets1"))} />
                     <img src = "/img/charlotte_hornets.png" id = "hornets1" alt = "hornets" onClick={() => (setSelectedImg("CHA") & setSelectedImgID("hornets1"))}/>
