@@ -4,7 +4,7 @@ NBA Reference is built with React as a front end and nodeJS as a backend. It als
 The NBA Reference app's sole reliablility is the NBA API, in which it is used to pull all the data including player details, box score and box summary. 
 
 # Demo
-
+Click Image for Video Demo
 [![Link to Demo](https://img.youtube.com/vi/88ekGW6v77A/0.jpg)](https://youtu.be/88ekGW6v77A)
 
 
@@ -15,4 +15,7 @@ The NBA Reference app's sole reliablility is the NBA API, in which it is used to
 * [NodeJS](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [Axios](https://www.npmjs.com/package/axios)
+
+# API Used
+
 * [NBA-API](https://www.npmjs.com/package/nba)
